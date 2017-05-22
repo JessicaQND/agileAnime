@@ -1,41 +1,23 @@
-extends layout
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='icon', href='../../favicon.ico')
+    title AniMate
+    // Bootstrap core CSS
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous', rel='stylesheet' )
+    // Custom styles for this template
+    link(href='/style.css', rel='stylesheet')
 
-append content
-//
-  Marketing messaging and featurettes
-// Wrap the rest of the page in another container to center all the content.
-.container.marketing
-// Three columns of text below the carousel
-.row
-  .col-lg-4
-    img.rounded-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
-    h2 Girl 1
-    p
-      | 23 year old. Female. Anime dating is great. 10/10 would recommend.
-      | Didn't actually find a partner, I'm just being paid to endorse this
-      | useless site
-    p
-      a.btn.btn-secondary(href='#', role='button') View details »
-  // /.col-lg-4
-  .col-lg-4
-    img.rounded-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
-    h2 Guy 1
-    p
-      | 19 year old. Male. A+ site Blah blah it's awesome I really like anime. Dating yeaaaaaaah.
-    p
-      a.btn.btn-secondary(href='#', role='button') View details »
-  // /.col-lg-4
-  .col-lg-4
-    img.rounded-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
-    h2 Girl 3
-    p
-      | 27 year old. Female. Anime is love. Anime is life. I'm actually
-      | an old man pretending to be a woman to lure young unsuspecting boys into
-      | my sex dungeon. Huehuehue.
-    p
-      a.btn.btn-secondary(href='#', role='button') View details »
-  // /.col-lg-4
-// /.row
+  body
+    include nav
+
+
+
+
 //
   Marketing messaging and featurettes
 // Wrap the rest of the page in another container to center all the content.
@@ -72,13 +54,93 @@ append content
     // /.col-lg-4
   // /.row
 
-  // FOOTER
-  footer
-    p.float-right
-      a(href='#') Back to top
-    p
-      | © 2017 Company, Inc. ·
-      a(href='#') Privacy
-      |  ·
-      a(href='#') Terms
-// /.container
+  link(rel='stylesheet', type='text/css', href='index.css')
+  script(src='javascript.js')
+  form(name='registation', onsubmit='return validation();')
+    | Please enter your details
+    fieldset
+      legend  Personal information:
+      |       First name:
+      br
+      input(type='text', name='firstname', placeholder='First name', required='')
+      br
+      |       Last name:
+      br
+      input(type='text', name='lastname', placeholder='Last name', required='')
+      br
+      // Datepicker does not work for Firefox
+      | Date of birth:
+      br
+      input(type='date', name='birthday', required='')
+      br
+      // Email does not work for safari
+      | E-mail:
+      br
+      input(type='email', name='email', placeholder='Email', required='')
+      br
+      |       Password:
+      br
+      input(type='password', name='password', placeholder='Password', required='')
+      br
+      |       Confirm Password:
+      br
+      input(type='password', name='password2', placeholder='Re-enter Password', required='')
+      br
+      |       Gender:
+      br
+      |       Male
+      input(type='radio', name='gender', value='male', checked='')
+      |       Female
+      input(type='radio', name='gender', value='female', checked='')
+    fieldset
+      legend  Preferences:
+      |       Solo dance styles:
+      br
+      input#Hip-hop(type='checkbox', value='Hip-hop')
+      label(for='Hip-hop')  Hip-hop
+      input#Jazz(type='checkbox', value='Jazz')
+      label(for='Jazz')  Jazz
+      input#Ballet(type='checkbox', value='Ballet')
+      label(for='Ballet')  Ballet
+      input#Contemporary(type='checkbox', value='Comtemporary')
+      label(for='Contemporary')  Contemporary
+      input#Dancehall(type='checkbox', value='Dancehall')
+      label(for='Dancehall')  Dance hall
+      input#Tap(type='checkbox', value='Tap')
+      label(for='Tap')  Tap
+      input#Lyrical(type='checkbox', value='Lyrical')
+      label(for='Lyrical')  Lyrical
+      input#Kpop(type='checkbox', value='Kpop')
+      label(for='Kpop')  Kpop
+      input#Bollywood(type='checkbox', value='Bollywood')
+      label(for='Bollywood')  Bollywood
+      br
+      br
+      |       Partnered dance styles (Ballroom):
+      br
+      input#Chacha(type='checkbox', value='Chacha')
+      label(for='Chacha')  Cha cha
+      input#Tango(type='checkbox', value='Tango')
+      label(for='Tango')  Tango
+      input#Waltz(type='checkbox', value='wWltz')
+      label(for='Waltz')  Waltz
+      input#Rumba(type='checkbox', value='Rumba')
+      label(for='Rumba')  Rumba
+      input#Swing(type='checkbox', value='Swing')
+      label(for='Swing')  Swing
+      br
+      br
+      |  Skill level:
+      br
+      |  Absolute Beginner
+      input(type='radio', name='skill', value='absolutebeginner', checked='')
+      |       Beginner
+      input(type='radio', name='skill', value='beginner', checked='')
+      |       Intermediate
+      input(type='radio', name='skill', value='intermediate', checked='')
+      |       Advanced
+      input(type='radio', name='skill', value='advanced', checked='')
+      br
+    br
+    input(type='submit', value='Submit')
+    input(type='hidden', name='redirect', value='index.html')

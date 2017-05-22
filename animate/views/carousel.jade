@@ -1,5 +1,11 @@
-extends layout
+extends index
+
 block carousel
+// Bootstrap core CSS
+link(href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous', rel='stylesheet' )
+// Custom styles for this template
+link(href='/style.css', rel='stylesheet')
+
 #myCarousel.carousel.slide(data-ride='carousel')
 // Indicators
 ol.carousel-indicators
@@ -8,7 +14,7 @@ li(data-target='#myCarousel', data-slide-to='1')
 li(data-target='#myCarousel', data-slide-to='2')
 .carousel-inner
 .item.active
-  img(src='', alt='First slide')
+  img(src='http://www.eurowest.com/images/collections/desire/slide/thumb-2445-1-1100x400.jpg', alt='First slide')
   .container
     .carousel-caption
       h1 Example headline.
