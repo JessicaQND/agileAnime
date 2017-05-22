@@ -1,0 +1,19 @@
+.nav
+  nav.navbar.navbar-toggleable-md.navbar-inverse.fixed-top.bg-inverse
+    button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    a.navbar-brand(href='#') Carousel
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item.active
+          a.nav-link(href='#')
+            | Home
+            span.sr-only (current)
+        li.nav-item
+          a.nav-link(href='#', onclick='loadSearch();') Search
+        li.nav-item
+          a.nav-link(href='#', onclick='loadReferences();') References
+        li.nav-item(style='float:right')
+          a.nav-link(href='#', onclick='loadRegister();') Register
+        li.nav-item(style='float:right')
+          a.nav-link(href='#', onclick='loadLogin();') Login

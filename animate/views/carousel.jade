@@ -1,0 +1,40 @@
+extends layout
+block carousel
+#myCarousel.carousel.slide(data-ride='carousel')
+// Indicators
+ol.carousel-indicators
+li.active(data-target='#myCarousel', data-slide-to='0')
+li(data-target='#myCarousel', data-slide-to='1')
+li(data-target='#myCarousel', data-slide-to='2')
+.carousel-inner
+.item.active
+  img(src='', alt='First slide')
+  .container
+    .carousel-caption
+      h1 Example headline.
+      p
+          | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+        p
+          a.btn.btn-lg.btn-primary(href='#', role='button') Sign up today
+.item
+  img(src='http://www.eurowest.com/images/collections/desire/slide/thumb-2445-1-1100x400.jpg', alt='Second slide')
+  .container
+    .carousel-caption
+      h1 Another example headline.
+      p
+        | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+      p
+        a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
+.item
+  img(src='http://www.eurowest.com/images/collections/marmi-classici/slide/thumb-AR_PULPIS_GREY-2-1100x400.jpg', alt='Third slide')
+  .container
+    .carousel-caption
+      h1 One more for good measure.
+      p
+        | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+      p
+        a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
+a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+span.glyphicon.glyphicon-chevron-left
+a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+span.glyphicon.glyphicon-chevron-right

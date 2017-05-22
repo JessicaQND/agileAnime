@@ -1,0 +1,77 @@
+<link rel="stylesheet" type="text/css" href="index.css">
+<script src="javascript.js"></script>
+
+<form name="registation" onsubmit="return validation();">
+  Please enter your details
+  <fieldset>
+    <legend> Personal information: </legend>
+      First name: <br>
+      <input type="text" name="firstname" placeholder="First name" required><br>
+      Last name:<br>
+      <input type="text" name="lastname" placeholder="Last name" required><br>
+      <!--Datepicker does not work for Firefox-->
+      Date of birth: <br>
+      <input type="date" name="birthday" required> <br>
+      <!--Email does not work for safari-->
+      E-mail: <br>
+      <input type="email" name="email" placeholder="Email" required> <br>
+      Password:<br>
+      <input type="password" name="password" placeholder="Password" required> <br>
+      Confirm Password: <br>
+      <input type="password" name="password2" placeholder="Re-enter Password" required> <br>
+
+
+      Gender:<br>
+      Male <input type="radio" name="gender" value="male" checked>
+      Female <input type="radio" name="gender" value="female" checked>
+
+
+  </fieldset>
+
+  <fieldset>
+    <legend> Preferences: </legend>
+      Solo dance styles:
+      <br><input type="checkbox" id="Hip-hop" value="Hip-hop">
+      <label for="Hip-hop"> Hip-hop</label>
+      <input type="checkbox" id="Jazz" value="Jazz">
+      <label for="Jazz"> Jazz </label>
+      <input type="checkbox" id="Ballet" value="Ballet">
+      <label for="Ballet"> Ballet </label>
+      <input type="checkbox" id="Contemporary" value="Comtemporary">
+      <label for="Contemporary"> Contemporary </label>
+      <input type="checkbox" id="Dancehall" value="Dancehall">
+      <label for="Dancehall"> Dance hall </label>
+      <input type="checkbox" id="Tap" value="Tap">
+      <label for="Tap"> Tap </label>
+      <input type="checkbox" id="Lyrical" value="Lyrical">
+      <label for="Lyrical"> Lyrical </label>
+      <input type="checkbox" id="Kpop" value="Kpop">
+      <label for="Kpop"> Kpop </label>
+      <input type="checkbox" id="Bollywood" value="Bollywood">
+      <label for="Bollywood"> Bollywood </label>
+      <br> <br>
+      Partnered dance styles (Ballroom): <br>
+      <input type="checkbox" id="Chacha" value="Chacha">
+      <label for="Chacha"> Cha cha </label>
+      <input type="checkbox" id="Tango" value="Tango">
+      <label for="Tango"> Tango </label>
+      <input type="checkbox" id="Waltz" value="wWltz">
+      <label for="Waltz"> Waltz </label>
+      <input type="checkbox" id="Rumba" value="Rumba">
+      <label for="Rumba"> Rumba </label>
+      <input type="checkbox" id="Swing" value="Swing">
+      <label for="Swing"> Swing </label><br>
+
+
+
+      <br> Skill level:
+      <br> Absolute Beginner <input type="radio" name="skill" value="absolutebeginner" checked>
+      Beginner <input type="radio" name="skill" value="beginner" checked>
+      Intermediate <input type="radio" name="skill" value="intermediate" checked>
+      Advanced <input type="radio" name="skill" value="advanced" checked> <br>
+
+  </fieldset>
+
+  <br> <input type="submit" value="Submit">
+  <input type="hidden" name="redirect" value="index.html">
+</form>
