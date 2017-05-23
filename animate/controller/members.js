@@ -1,14 +1,25 @@
 require('../model/db');
 var mongoose = require('mongoose');
-var Members = mongoose.model('Members');
+var member = mongoose.model('Member');
 
-/*adding a person to the date base*/
+
+function index(req,res){
+  member.find().exec(
+        function(err, simpleSchema){
+          if(err){res.render('error', {
+            message:err.message,
+            error: err});
+          }
+	  else{console.log('find complete');
+	    res.render('member',{'member':simpleSchema });}
+	}
+      );
+};
 
 module.exports.newMember = function(req,res){
-  var newMember = new Members({firstname: req.body.firstname, lastname:
-  req.body.lastname, date:reg.body.date, username: req.body.username, password:
-  req.body.password,int1:reg.body.int1,int2:reg.body.int2,int3:reg.body.int3});
-  newMember.save(function(err,date){
+  var newmember = new member({firstname: req.body.firstname, lastname: req.body.lastname, age: req.body.age, username: req.body.username, password : req.body.password,
+  int1: req.body.int1, int2: req.body.int2, int3: req.body.int3});
+  newmember.save(function(err, data){
     if(err){
       console.log(err);
       res.status(500);
@@ -22,4 +33,4 @@ module.exports.newMember = function(req,res){
       index(req, res);
     }
   });
-} ;
+};

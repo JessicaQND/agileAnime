@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var dbURI = 'mongodb:bubbleboix:Loving89@ds149201.mlab.com:49201/glennbdsm';
+var dbURI = 'mongodb://jessseecar:Loving89@ds149201.mlab.com:49201/glennbdsm';
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function () {
