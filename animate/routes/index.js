@@ -15,7 +15,7 @@ router.get('/login', function(req, res) {
     res.render('login', {});
 });
 
-router.post('/signup', ctrlMemeber.newMember);
+router.post('/register', ctrlMemeber.newMember);
 
 router.get('/', function(req, res) {
       res.render('index');
@@ -28,5 +28,7 @@ router.get('/login', function(req, res) {
 router.get('/register', function(req, res) {
       res.render('register', { });
 });
+
+router.post('/login',ctrlMemeber.login);
 
 module.exports = router;
