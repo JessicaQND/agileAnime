@@ -30,6 +30,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//passport middleware
+app.use(passport.initalize());
+app.use(passport.session());
+
 app.use('/', index);
 app.use('/users', users);
 
