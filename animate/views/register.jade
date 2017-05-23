@@ -1,0 +1,42 @@
+extends ./layout
+block content
+  form(action='/signup', method= 'post')
+    | Please enter your details
+    fieldset
+      legend  Personal information:
+      |       First name:
+      br
+      input(id='firstname', type='text', name='firstname')
+      br
+      |       Last name:
+      br
+      input(id='lastname', type='text', name='lastname')
+      br
+      // Datepicker does not work for Firefox
+      | Date of birth:
+      br
+      input(id='date', type='text', name='birthday')
+      br
+      | Username:
+      br
+      input(id='username', type='text', name='username')
+      br
+      |       Password:
+      br
+      input(id='password', type='text', name='password')
+      br
+      |     interest 1:
+      br
+      input(id='int1',type='text', name='int1')
+      br
+      |     interest 2:
+      br
+      input(id='int2',type='text', name='int2')
+      br
+      |      interest 3:
+      br
+      input(id='int3',type='text', name='int3')
+      br
+      br
+      br
+      input(type='submit', value='Register')

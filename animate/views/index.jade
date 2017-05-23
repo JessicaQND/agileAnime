@@ -1,98 +1,53 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-    meta(name='description', content='')
-    meta(name='author', content='')
-    link(rel='icon', href='../../favicon.ico')
-    title AniMate
-    // Bootstrap core CSS
-    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous', rel='stylesheet' )
-    // Custom styles for this template
-    link(href='/style.css', rel='stylesheet')
+extends ./layout
+block content
+  #myCarousel.carousel.slide(data-ride='carousel')
+  // Indicators
+  ol.carousel-indicators
+  li.active(data-target='#myCarousel', data-slide-to='0')
+  li(data-target='#myCarousel', data-slide-to='1')
+  li(data-target='#myCarousel', data-slide-to='2')
+  .carousel-inner
+  .item.active
+    img(src='http://www.eurowest.com/images/collections/desire/slide/thumb-2445-1-1100x400.jpg', alt='First slide')
+    .container
+      .carousel-caption
+        h1 Example headline.
+        p
+            | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+          p
+            a.btn.btn-lg.btn-primary(href='#', role='button') Sign up today
 
-  body
-    include nav
+      br
 
-
-
-
-//
-  Marketing messaging and featurettes
-// Wrap the rest of the page in another container to center all the content.
-.container.marketing
-  // Three columns of text below the carousel
-  .row
-    .col-lg-4
-      img.rounded-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
-      h2 Girl 1
-      p
-        | 23 year old. Female. Anime dating is great. 10/10 would recommend.
-        | Didn't actually find a partner, I'm just being paid to endorse this
-        | useless site
-      p
-        a.btn.btn-secondary(href='#', role='button') View details »
-    // /.col-lg-4
-    .col-lg-4
-      img.rounded-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
-      h2 Guy 1
-      p
-        | 19 year old. Male. A+ site Blah blah it's awesome I really like anime. Dating yeaaaaaaah.
-      p
-        a.btn.btn-secondary(href='#', role='button') View details »
-    // /.col-lg-4
-    .col-lg-4
-      img.rounded-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
-      h2 Girl 3
-      p
-        | 27 year old. Female. Anime is love. Anime is life. I'm actually
-        | an old man pretending to be a woman to lure young unsuspecting boys into
-        | my sex dungeon. Huehuehue.
-      p
-        a.btn.btn-secondary(href='#', role='button') View details »
-    // /.col-lg-4
-  // /.row
-
-  link(rel='stylesheet', type='text/css', href='index.css')
-  script(src='javascript.js')
-  form(action='/signup', method= 'post')
-    | Please enter your details
-    fieldset
-      legend  Personal information:
-      |       First name:
-      br
-      input(id='firstname', type='text', name='firstname')
-      br
-      |       Last name:
-      br
-      input(id='lastname', type='text', name='lastname')
-      br
-      // Datepicker does not work for Firefox
-      | Date of birth:
-      br
-      input(id='date', type='text', name='birthday')
-      br
-      | Username:
-      br
-      input(id='username', type='text', name='username')
-      br
-      |       Password:
-      br
-      input(id='password', type='text', name='password')
-      br
-      |     interest 1:
-      br
-      input(id='int1',type='text', name='int1')
-      br
-      |     interest 2:
-      br
-      input(id='int2',type='text', name='int2')
-      br
-      |      interest 3:
-      br
-      input(id='int3',type='text', name='int3')
-      br
-      br
-      br
-      input(type='submit', value='Register')
+    .container.marketing
+      // Three columns of text below the carousel
+      .row
+        .col-lg-4
+          img.rounded-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
+          h2 Girl 1
+          p
+            | 23 year old. Female. Anime dating is great. 10/10 would recommend.
+            | Didn't actually find a partner, I'm just being paid to endorse this
+            | useless site
+          p
+            a.btn.btn-secondary(href='#', role='button') View details »
+        // /.col-lg-4
+        .col-lg-4
+          img.rounded-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
+          h2 Guy 1
+          p
+            | 19 year old. Male. A+ site Blah blah it's awesome I really like anime. Dating yeaaaaaaah.
+          p
+            a.btn.btn-secondary(href='#', role='button') View details »
+        // /.col-lg-4
+        .col-lg-4
+          img.rounded-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
+          h2 Girl 3
+          p
+            | 27 year old. Female. Anime is love. Anime is life. I'm actually
+            | an old man pretending to be a woman to lure young unsuspecting boys into
+            | my sex dungeon. Huehuehue.
+          p
+            a.btn.btn-secondary(href='#', role='button') View details »
+        // /.col-lg-4
+      // /.row
