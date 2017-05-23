@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var Memembers = new mongoose.Schema(
+var Members = new mongoose.Schema(
   {firstname:String,
     lastname:String,
     date: Number,
@@ -12,4 +12,4 @@ var Memembers = new mongoose.Schema(
   }
 );
 
-mongoose.model('Memebers', simpleSchema );
+mongoose.model('Members', simpleSchema );

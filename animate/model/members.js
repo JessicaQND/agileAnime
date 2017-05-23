@@ -1,7 +1,10 @@
 var mongoose = require('mongoose');
 
-var Memembers = new mongoose.Schema(
-  {firstname:String,
+mongoose.connect('mongodb://localhost:3000')
+var Schema = mongoose.Schema;
+
+var Member = new Schema({
+  firstname:String,
     lastname:String,
     date: Number,
     username:String,
@@ -12,4 +15,4 @@ var Memembers = new mongoose.Schema(
   }
 );
 
-mongoose.model('Memebers', simpleSchema );
+module.exports = mongoose.model('Member', Member);
