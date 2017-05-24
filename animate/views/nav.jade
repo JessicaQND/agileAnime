@@ -10,9 +10,11 @@
             | Home
             span.sr-only (current)
         li.nav-item
+          a.nav-link(href='/about') About
+        li.nav-item
           a.nav-link(href='/search') Search
         li.nav-item
-          a.nav-link(href='/references') References
+          a.nav-link(href='/profile') Profile
       ul.navbar-nav(style='float:right')
         li.nav-item
         form.form-inline.mt-2.mt-md-0(action='/login', method= 'post')
