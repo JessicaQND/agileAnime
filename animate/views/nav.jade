@@ -2,7 +2,7 @@
   nav.navbar.navbar-toggleable-md.navbar-inverse.fixed-top.bg-inverse
     button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
       span.navbar-toggler-icon
-    a.navbar-brand(href='#') Carousel
+    a.navbar-brand(href='/') AniMate
     #navbarCollapse.collapse.navbar-collapse
       ul.navbar-nav.mr-auto
         li.nav-item.active
@@ -13,7 +13,11 @@
           a.nav-link(href='/search') Search
         li.nav-item
           a.nav-link(href='/references') References
-        li.nav-item(style='float:right')
-          a.nav-link(href='/register') Register
-        li.nav-item(style='float:right')
-          a.nav-link(href='/login') Login
+      ul.navbar-nav(style='float:right')
+        li.nav-item
+        form.form-inline.mt-2.mt-md-0(action='/login', method= 'post')
+          input.form-control.mr-sm-2(id='email', type='text', name='email', placeholder='Email')
+          input.form-control.mr-sm-2(id='password', type='text', name='password', placeholder='Password')
+          button.btn.btn-outline-success.my-2.my-sm-0(type='submit', value="Login") Login
+        li.nav-item(id='register-button')
+          a.btn.btn-outline-primary.my-2.my-sm-0(href='/register', role='button') Register

@@ -2,18 +2,13 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
-body {
-  padding-top: 0rem;
-  padding-bottom: 3rem;
-  color: #5a5a5a;
-}
-
-form {
-  margin-left: 3rem;
-}
-
-#search-form{
+#search-form {
   margin-left: 0rem;
+}
+
+#register-button {
+  padding-left: 0.5rem;
+  padding-top: 0.05rem;
 }
 
 .jumbotron{
@@ -21,9 +16,26 @@ form {
   padding-bottom: 1rem;
   padding-top: 0.5rem;
 }
+
+body {
+  padding-top: 0rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+}
+
+footer {
+  position: relative;
+  bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+form {
+  margin-left: 3rem;
+}
+
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
-
 /* Carousel base class */
 .carousel {
   margin-bottom: 4rem;
