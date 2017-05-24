@@ -1,9 +1,9 @@
 extends layout
 block content
+      br
       form(action='/login', method= 'post')
-        | Please enter your details
         fieldset
-          legend  Personal information:
+          legend  Please enter your details:
           | Email:
           br
           input(id='email', type='text', name='email', autofocus='')
