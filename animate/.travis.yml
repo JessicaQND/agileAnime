@@ -6,3 +6,7 @@ node_js:
   - node
 notifications:
   slack: agileanimate:00aGlfA2vSDo080zo8FBGL4U
+install:
+  yarn install --pure-lockfile
+script:
+  yarn test
