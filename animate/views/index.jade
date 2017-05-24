@@ -1,13 +1,17 @@
 extends layout
 block content
-    img(src='http://www.eurowest.com/images/collections/desire/slide/thumb-2445-1-1100x400.jpg', alt='First slide')
-    .container
-      .carousel-caption
-        h1 Example headline.
-        p
-            | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-          p
-            a.btn.btn-lg.btn-primary(href='#', role='button') Sign up today
+    #myCarousel.carousel.slide(data-ride='carousel')
+      .carousel-inner(role='listbox')
+        .carousel-item.active
+          img.first-slide(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='First slide')
+          .container
+            .carousel-caption.d-none.d-md-block.text-left
+              h1 AniMate
+              p
+                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              p
+                a.btn.btn-lg.btn-primary(href='#', role='button') Sign up today
+
       br
 
     .container.marketing
