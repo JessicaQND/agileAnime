@@ -25,9 +25,8 @@ router.get('/strategies', function(req, res) {
 });
 
 //should only be for authenticated users
-router.get('/profile', function(req, res) {
-    res.render('profile');
-});
+router.get('/profile', ctrlMemeber.profilelist);
+
 
 router.get('/register', function(req, res) {
     res.render('register');

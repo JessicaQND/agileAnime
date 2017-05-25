@@ -3,16 +3,18 @@ var mongoose = require('mongoose');
 var member = mongoose.model('Member');
 var account = mongoose.model('Account');
 
+//returning a list on user profile
+module.exports.profilelist = profilelist;
 
-function index(req,res){
-  member.find().exec(
+function profilelist(req,res){
+  member.find( {username : "stroppyjohn" }).exec(
         function(err, simpleSchema){
           if(err){res.render('error', {
             message:err.message,
             error: err});
           }
-	  else{console.log('find complete');
-	    res.render('member',{'member':simpleSchema });}
+	  else{console.log(simpleSchema);
+	    res.render('profile',{'member':simpleSchema });}
 	}
       );
 };
@@ -79,24 +81,24 @@ module.exports.newMember = function(req,res){
 		}
 <<<<<<< HEAD
 
-}*/
-=======
-   
-}
-
-//another possibility for matching
-var user1 = db.members.find(???);
-var matchedusers = [];
-var otherUsers = db.members.find({
-$or: [{"int1": user1.int1}, {"int1": user1.int2}, {"int1": user1.int3},
-	{"int2": user1.int1}, {"int2": user1.int2}, {"int2": user1.int3},
-	{"int3": user1.int1}, {"int3": user1.int2}, {"int3": user1.int3}]
-});
-while(otherusers.hasNext()) {
-		matchedusers.push;
-} 
-*/
->>>>>>> 04cec4789459d9a29a9d7e23670c0a9b7d6f149c
-
-//start the chat
-//log out
+// }*/
+// =======
+//
+// }
+//
+// //another possibility for matching
+// var user1 = db.members.find(???);
+// var matchedusers = [];
+// var otherUsers = db.members.find({
+// $or: [{"int1": user1.int1}, {"int1": user1.int2}, {"int1": user1.int3},
+// 	{"int2": user1.int1}, {"int2": user1.int2}, {"int2": user1.int3},
+// 	{"int3": user1.int1}, {"int3": user1.int2}, {"int3": user1.int3}]
+// });
+// while(otherusers.hasNext()) {
+// 		matchedusers.push;
+// }
+// */
+// >>>>>>> 04cec4789459d9a29a9d7e23670c0a9b7d6f149c
+//
+// //start the chat
+// //log out
