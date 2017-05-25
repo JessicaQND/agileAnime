@@ -11,12 +11,41 @@ block content
       br
       td Age: #{p.age}
       br
-      td Username: #{p.username}
-      br
-      td Password: #{p.password}
-      br
       td Anime 1: #{p.int1}
       br
       td Anime 2: #{p.int2}
       br
       td Anime 3: #{p.int3}
+
+      form(name='update', onsubmit='return validation();', action='/update', method= 'post')
+        | Please enter your new details
+        fieldset
+          legend  Personal information:
+          |       First name:
+          br
+          input(id='firstname', type='text', name='firstname', required)
+          br
+          |       Last name:
+          br
+          input(id='lastname', type='text', name='lastname', required)
+          br
+          // Datepicker does not work for Firefox
+          | Date of birth:
+          br
+          input(id='date', type='text', name='birthday', required)
+          br
+          |     interest 1:
+          br
+          input(id='int1',type='text', name='int1', required)
+          br
+          |     interest 2:
+          br
+          input(id='int2',type='text', name='int2', required)
+          br
+          |      interest 3:
+          br
+          input(id='int3',type='text', name='int3', required)
+          br
+          br
+          br
+          input(type='submit', value='update')

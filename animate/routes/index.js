@@ -26,6 +26,8 @@ router.get('/strategies', function(req, res) {
 
 //should only be for authenticated users
 router.get('/profile', ctrlMemeber.profilelist);
+//updating on update form submit
+router.post('/update', ctrlMemeber.UpdateDetails);
 
 
 router.get('/register', function(req, res) {
@@ -39,4 +41,6 @@ router.get('/login', function(req, res) {
 router.post('/login', passport.authenticate('local'), function(req, res) {
   res.render('index');
 });
+
+
 module.exports = router;
