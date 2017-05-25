@@ -1,22 +1,56 @@
 extends layout
 block content
-
-
-  each p in member
-    tr
-      br
-      td First Name: #{p.firstname}
-      br
-      td Last Name:#{p.lastname}
-      br
-      td Age: #{p.age}
-      br
-      td Username: #{p.username}
-      br
-      td Password: #{p.password}
-      br
-      td Anime 1: #{p.int1}
-      br
-      td Anime 2: #{p.int2}
-      br
-      td Anime 3: #{p.int3}
+  .container.marketing
+    br
+    .jumbotron
+     h1 Welcome to your settings page
+    .row
+        each p in member
+          tr
+            // ACCOUNT DETAILS
+            .col-lg-4
+              h3 Account details:
+              br
+              td Username: #{p.username}
+              //a.btn.btn-link(href='#', role='button') Edit
+              br
+              td Password: #{p.password}
+              //a.btn.btn-link(href='#', role='button') Edit
+              br
+            //PERSONAL DETAILS
+            .col-lg-4
+              h3 Personal details:
+              br
+              td First Name: #{p.firstname}
+                form(name='update', onsubmit='return validation();', action='/update', method= 'post')
+                  input(id='firstname', type='text', name='firstname')
+                  input(type='submit', value='Update')
+              br
+              td Last Name: #{p.lastname}
+                form(name='update', action='/update', method= 'post')
+                  input(id='lastname', type='text', name='lastname')
+                  input(type='submit', value='Update')
+              br
+              td Age: #{p.age}
+                form(name='update', action='/update', method= 'post')
+                  input(id='age', type='text', name='age')
+                  input(type='submit', value='Update')
+              br
+            //PREFERENCES
+            .col-lg-4
+              h3 Preferences:
+              br
+              td Anime 1: #{p.int1}
+                form(name='update', action='/update', method= 'post')
+                  input(id='int1', type='text', name='int1')
+                  input(type='submit', value='Update')
+              br
+              td Anime 2: #{p.int2}
+                form(name='update', action='/update', method= 'post')
+                  input(id='int2', type='text', name='int2')
+                  input(type='submit', value='Update')
+              br
+              td Anime 3: #{p.int3}
+                form(name='update', action='/update', method= 'post')
+                  input(id='int3', type='text', name='int3')
+                  input(type='submit', value='Update')
