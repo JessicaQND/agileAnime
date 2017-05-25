@@ -52,6 +52,36 @@ module.exports.login = function(req,res){
 //returning a view of information to the user profile page
 
 //edit/edit information off a user profile page
+
 //the algorithm for producing a list index of matches
+//NOT FINAL CODE, just practice/placeholder stuff:
+/*module.exports.matches = function(req,res){
+	var user1 = db.Members.find(gjihil);
+	var user2;
+	var otherusers = db.Members.find();
+	while(otherusers.hasNext()) {
+   		user2 = otherusers.next();
+		if (user2.int1 == user1.int1) {
+			res.render(user2);
+		} else if (user2.int2 == user1.int1) {
+			res.render(user2);
+		} else if (user2.int3 == user1.int1) {
+			res.render(user2);
+		} else if (user2.int1 == user1.int2) {
+			res.render(user2);
+		} else if (user2.int2 == user1.int2) {
+			res.render(user2);
+		} else if (user2.int3 == user1.int2) {
+			res.render(user2);
+		} else if (user2.int1 == user1.int3) {
+			res.render(user2);
+		} else if (user2.int2 == user1.int3) {
+			res.render(user2);
+		} else if (user2.int3 == user1.int3) {
+			res.render(user2);
+		}
+   
+}*/
+
 //start the chat
 //log out
