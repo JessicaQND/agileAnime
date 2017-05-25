@@ -43,7 +43,7 @@ module.exports.newMember = function(req,res){
 };
 //getting user name and password authencation
 module.exports.login = function(req,res){
-  var user = db.Memeber.find(req.body.username);
+  var user = db.Member.find(req.body.username);
   var password = user.password;
   console.log('loggin')
   res.render('/')
