@@ -58,7 +58,7 @@ module.exports.login = function(req,res){
 /*module.exports.matches = function(req,res){
 	var user1 = db.Members.find(gjihil);
 	var user2;
-	var matchlist = []
+	var matchlist = [];
 	var otherusers = db.Members.find();
 	while(otherusers.hasNext()) {
    		user2 = otherusers.next();
