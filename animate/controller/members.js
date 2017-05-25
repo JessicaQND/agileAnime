@@ -111,3 +111,50 @@ module.exports.newMember = function(req,res){
     res.render('updated');
   });
 };
+
+module.exports.MatchMake = function(inT1, inT2, inT3, callback) {
+	mongoose.once('open', function() {
+		var schema = mongoose.Member()
+		var Matched = mongoose.model('Friend', schema);
+		Matched.find({
+			$or[
+			{"int1": inT1}, {"int2": inT1}, {"int3": inT1},
+			{"int1": inT2}, {"int2": inT2}, {"int3": inT2},
+			{"int1": inT3}, {"int2": inT3}, {"int3": inT3},
+			]
+		}, function(err, friends) {
+		if (err) {
+			onErr(err, callback);
+		} else {
+			mongoose.connection.close();
+			console.log(friends);
+			callback("", friends);
+			}
+		});
+	});
+};
+		
+module.exports.get = function(req,res {
+	var inT1 = profilelist.int1; 
+	var inT2 = profilelist.int2;
+	ver inT3 = profilelist.int3;
+	MatchMake(inT1, inT2, inT3, function(err, MatchMake) {
+	if (!err) {
+		var matchList = "",
+		for (i = 0; i < MatchMake.length; i++) {  
+			matchList = matchList + "<li>" MatchMake[i].username + " with interests in " + MatchMake[i].int1 + ", " + MatchMake[i].int2 + " and " + MatchMake[i].int3 + " is a match for you! </li>"
+		}
+		res.writeHead(200, {
+			'Content-Type': 'text/html'
+		});
+		res.write(matchList);
+		res.end();
+		} else {
+		res.writeHead(200, {
+			'Content-Type': 'text/html'
+		});
+		res.write("Yikes! Database error!")
+		red.end();
+	}
+	});
+};
