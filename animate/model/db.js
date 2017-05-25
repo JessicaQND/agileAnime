@@ -30,3 +30,4 @@ process.on('SIGTERM', function() {
 });
 
 require('./members.js')
+require('./Account.js')

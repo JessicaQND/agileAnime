@@ -1,6 +1,7 @@
 require('../model/db');
 var mongoose = require('mongoose');
 var member = mongoose.model('Member');
+var account = mongoose.model('Account');
 
 
 function index(req,res){
@@ -27,34 +28,29 @@ module.exports.newMember = function(req,res){
     int3: req.body.int3
   });
   newmember.save(function(err, data){
-    if(err){
+    if(err) {
       console.log(err);
       res.status(500);
       res.render('error', {
         message:err.message,
         error: err
       });
-    }
-    else{
-      console.log(data, ' saved');
-      res.render('login');
+    } else {
+      account.register(
+        new account({username: req.body.username}),
+        req.body.password,
+        function(err,acc) {
+          if(err) {
+            console.log(err);
+          }
+          res.render('login')
+          //passport.authenticate('local', {successRedirect:'login'})
+        }
+      );
     }
   });
-};
-//getting user name and password authencation
-module.exports.login = function(req,res){
-  var user = db.Member.find(req.body.username);
-  var password = user.password;
-  console.log('loggin')
-  res.render('/')
-
 }
-//returning a view of information to the user profile page
 
-//edit/edit information off a user profile page
-
-//the algorithm for producing a list index of matches
-//NOT FINAL CODE, just practice/placeholder stuff:
 /*module.exports.matches = function(req,res){
 	var user1 = db.Members.find(gjihil);
 	var user2;
@@ -81,7 +77,7 @@ module.exports.login = function(req,res){
 		} else if (user2.int3 == user1.int3) {
 			matchlist.push(user2.username);
 		}
-   
+
 }*/
 
 //start the chat

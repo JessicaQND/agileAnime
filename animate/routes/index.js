@@ -2,6 +2,7 @@ var express = require('express');
 var Memberdb = require('../model/members')
 var router = express.Router();
 var ctrlMemeber = require('../controller/members');
+var passport = require('passport');
 
 router.get('/', function(req, res) {
     res.render('index');
@@ -34,8 +35,9 @@ router.get('/register', function(req, res) {
 router.post('/register', ctrlMemeber.newMember);
 
 router.get('/login', function(req, res) {
-    res.render('login');
+    res.render('login',{user : req.user});
 });
-router.post('/login',ctrlMemeber.login);
-
+router.post('/login', passport.authenticate('local'), function(req, res) {
+  res.render('index');
+});
 module.exports = router;
