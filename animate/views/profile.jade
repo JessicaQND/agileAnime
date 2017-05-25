@@ -1,56 +1,5 @@
 extends layout
 block content
-<<<<<<< HEAD
-
-
-  each p in member
-    tr
-      br
-      td First Name: #{p.firstname}
-      br
-      td Last Name:#{p.lastname}
-      br
-      td Age: #{p.age}
-      br
-      td Anime 1: #{p.int1}
-      br
-      td Anime 2: #{p.int2}
-      br
-      td Anime 3: #{p.int3}
-
-      form(name='update', onsubmit='return validation();', action='/update', method= 'post')
-        | Please enter your new details
-        fieldset
-          legend  Personal information:
-          |       First name:
-          br
-          input(id='firstname', type='text', name='firstname', required)
-          br
-          |       Last name:
-          br
-          input(id='lastname', type='text', name='lastname', required)
-          br
-          // Datepicker does not work for Firefox
-          | Date of birth:
-          br
-          input(id='date', type='text', name='birthday', required)
-          br
-          |     interest 1:
-          br
-          input(id='int1',type='text', name='int1', required)
-          br
-          |     interest 2:
-          br
-          input(id='int2',type='text', name='int2', required)
-          br
-          |      interest 3:
-          br
-          input(id='int3',type='text', name='int3', required)
-          br
-          br
-          br
-          input(type='submit', value='update')
-=======
   .container.marketing
     br
     .jumbotron
@@ -60,9 +9,10 @@ block content
           tr
             // ACCOUNT DETAILS
             .col-lg-4
-              h3 Account details:
+              h2 Account details:
               br
               td Username: #{p.username}
+              br
               //a.btn.btn-link(href='#', role='button') Edit
               br
               td Password: #{p.password}
@@ -70,39 +20,39 @@ block content
               br
             //PERSONAL DETAILS
             .col-lg-4
-              h3 Personal details:
+              h2 Personal details:
               br
               td First Name: #{p.firstname}
-                form(name='update', onsubmit='return validation();', action='/update', method= 'post')
+                form(name='update', action='/updateFirstname', method= 'post')
                   input(id='firstname', type='text', name='firstname')
                   input(type='submit', value='Update')
               br
               td Last Name: #{p.lastname}
-                form(name='update', action='/update', method= 'post')
+                form(name='update', action='/updateLastname', method= 'post')
                   input(id='lastname', type='text', name='lastname')
                   input(type='submit', value='Update')
               br
               td Age: #{p.age}
-                form(name='update', action='/update', method= 'post')
+                form(name='update', action='/updateAge', method= 'post')
                   input(id='age', type='text', name='age')
                   input(type='submit', value='Update')
               br
             //PREFERENCES
             .col-lg-4
-              h3 Preferences:
+              h2 Preferences:
               br
               td Anime 1: #{p.int1}
-                form(name='update', action='/update', method= 'post')
+                form(name='update', action='/updateInt1', method= 'post')
                   input(id='int1', type='text', name='int1')
                   input(type='submit', value='Update')
               br
               td Anime 2: #{p.int2}
-                form(name='update', action='/update', method= 'post')
+                form(name='update', action='/updateInt2', method= 'post')
                   input(id='int2', type='text', name='int2')
                   input(type='submit', value='Update')
               br
               td Anime 3: #{p.int3}
-                form(name='update', action='/update', method= 'post')
+                form(name='update', action='/updateInt3', method= 'post')
                   input(id='int3', type='text', name='int3')
                   input(type='submit', value='Update')
 >>>>>>> aca6ef966b7507f05471e027a092587bb43ba675

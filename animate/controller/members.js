@@ -3,20 +3,36 @@ var mongoose = require('mongoose');
 var member = mongoose.model('Member');
 var account = mongoose.model('Account');
 
+//return a list of all users
+// module.exports.list = list;
+//
+// function list(req,res){
+//   member.find({}).exec(
+//     function(err, simpleSchema){
+//       if(err){res.render('error', {
+//         message:err.message,
+//         error: err});
+//       }
+// 	  else{console.log(simpleSchema);
+// 	    res.render('search',{'member':simpleSchema });}
+// 	  }
+//   );
+// };
+
 //returning a list on user profile
 module.exports.profilelist = profilelist;
 
 function profilelist(req,res){
   member.find( {username : "stroppyjohn" }).exec(
-        function(err, simpleSchema){
-          if(err){res.render('error', {
-            message:err.message,
-            error: err});
-          }
+    function(err, simpleSchema){
+      if(err){res.render('error', {
+        message:err.message,
+        error: err});
+      }
 	  else{console.log(simpleSchema);
 	    res.render('profile',{'member':simpleSchema });}
-	}
-      );
+	  }
+  );
 };
 //uploading the data base onto mlab
 module.exports.newMember = function(req,res){
@@ -45,133 +61,53 @@ module.exports.newMember = function(req,res){
           if(err) {
             console.log(err);
           }
-          res.render('login')
+          res.render('/')
           //passport.authenticate('local', {successRedirect:'login'})
         }
       );
     }
   });
 }
-  module.exports.UpdateDetails = function(req, res){
+  module.exports.updateFirstname = function(req, res){
     member.update({username : "stroppyjohn"}, {
     firstname : req.body.firstname,
-    lastname: req.body.lastname,
-    age: req.body.birthday,
-    int1: req.body.int1,
-    int2: req.body.int2,
-    int3: req.body.int3
   }).exec((err,result)=>{
-    res.render('login');
+    res.render('updated');
   });
-
+};
+  module.exports.updateLastname = function(req, res){
+    member.update({username : "stroppyjohn"}, {
+    lastname : req.body.lastname,
+  }).exec((err,result)=>{
+    res.render('updated');
+  });
+};
+  module.exports.updateAge = function(req, res){
+    member.update({username : "stroppyjohn"}, {
+    age : req.body.age,
+  }).exec((err,result)=>{
+    res.render('updated');
+  });
+};
+  module.exports.updateInt1 = function(req, res){
+    member.update({username : "stroppyjohn"}, {
+    int1 : req.body.int1,
+  }).exec((err,result)=>{
+    res.render('updated');
+  });
+};
+  module.exports.updateInt2 = function(req, res){
+    member.update({username : "stroppyjohn"}, {
+    int2 : req.body.int2,
+  }).exec((err,result)=>{
+    res.render('updated');
+  });
 };
 
-//deleteField
-// module.exports.updatefield = function(req,res)
-//   member.remove({_username:req.param.username})
-/*module.exports.matches = function(req,res){
-	var user1 = db.Members.find(gjihil);
-	var user2;
-	var matchlist = [];
-	var otherusers = db.Members.find();
-	while(otherusers.hasNext()) {
-   		user2 = otherusers.next();
-		if (user2.int1 == user1.int1) {
-			matchlist.push(user2.username);
-		} else if (user2.int2 == user1.int1) {
-			matchlist.push(user2.username);
-		} else if (user2.int3 == user1.int1) {
-			matchlist.push(user2.username);
-		} else if (user2.int1 == user1.int2) {
-			matchlist.push(user2.username);
-		} else if (user2.int2 == user1.int2) {
-			matchlist.push(user2.username);
-		} else if (user2.int3 == user1.int2) {
-			matchlist.push(user2.username);
-		} else if (user2.int1 == user1.int3) {
-			matchlist.push(user2.username);
-		} else if (user2.int2 == user1.int3) {
-			matchlist.push(user2.username);
-		} else if (user2.int3 == user1.int3) {
-			matchlist.push(user2.username);
-		}
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-// }*/
-// =======
-//
-// }
-//
-// //another possibility for matching
-// // var user1 = db.members.find(???);
-// // var matchedusers = [];
-// // var otherUsers = db.members.find({
-// // $or: [{"int1": user1.int1}, {"int1": user1.int2}, {"int1": user1.int3},
-// // 	{"int2": user1.int1}, {"int2": user1.int2}, {"int2": user1.int3},
-// // 	{"int3": user1.int1}, {"int3": user1.int2}, {"int3": user1.int3}]
-// // });
-// // while(otherusers.hasNext()) {
-// // 		matchedusers.push;
-// // }
-// // */
-// // >>>>>>> 04cec4789459d9a29a9d7e23670c0a9b7d6f149c
-// //
-// // //start the chat
-// // // //log out
-// // =======
-// // }*/
-// // // =======
-// //
-// // }
-// // /*
-// // //another possibility for matching
-// // var user1 = db.members.find(???);
-// // var matchedusers = [];
-// var otherUsers = db.members.find({
-// $or: [{"int1": user1.int1}, {"int1": user1.int2}, {"int1": user1.int3},
-// 	{"int2": user1.int1}, {"int2": user1.int2}, {"int2": user1.int3},
-// 	{"int3": user1.int1}, {"int3": user1.int2}, {"int3": user1.int3}]
-// });
-// while(otherusers.hasNext()) {
-// 		matchedusers.push;
-// }
-//
-// /* Yet another possibility:
-// var user2;
-// var otherusers = db.Members.find();
-// otherusers.forEach(function(user2) {
-// 		if (user2.int1 == user1.int1) {
-// 			matchlist.push(user2.username);
-// 		} else if (user2.int2 == user1.int1) {
-// 			matchlist.push(user2.username);
-// 		} else if (user2.int3 == user1.int1) {
-// 			matchlist.push(user2.username);
-// 		} else if (user2.int1 == user1.int2) {
-// 			matchlist.push(user2.username);
-// 		} else if (user2.int2 == user1.int2) {
-// 			matchlist.push(user2.username);
-// 		} else if (user2.int3 == user1.int2) {
-// 			matchlist.push(user2.username);
-// 		} else if (user2.int1 == user1.int3) {
-// 			matchlist.push(user2.username);
-// 		} else if (user2.int2 == user1.int3) {
-// 			matchlist.push(user2.username);
-// 		} else if (user2.int3 == user1.int3) {
-// 			matchlist.push(user2.username);
-// 		}
-// });
-//
-// /*And another
-// var user1 = db.members.find(???);
-// var matchedusers = [];
-// var otherUsers = db.members.find({
-// $or: [{"int1": user1.int1}, {"int1": user1.int2}, {"int1": user1.int3},
-// 	{"int2": user1.int1}, {"int2": user1.int2}, {"int2": user1.int3},
-// 	{"int3": user1.int1}, {"int3": user1.int2}, {"int3": user1.int3}]
-// });
-// otherusers.forEach(function(user2) {
-// 	matchedusers.push;
-// // 	});
-=======
->>>>>>> aca6ef966b7507f05471e027a092587bb43ba675
+  module.exports.updateInt3 = function(req, res){
+    member.update({username : "stroppyjohn"}, {
+    int3 : req.body.int3,
+  }).exec((err,result)=>{
+    res.render('updated');
+  });
+};
