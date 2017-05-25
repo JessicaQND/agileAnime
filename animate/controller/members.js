@@ -81,6 +81,7 @@ module.exports.newMember = function(req,res){
 		}
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 // }*/
 // =======
 //
@@ -102,3 +103,67 @@ module.exports.newMember = function(req,res){
 //
 // //start the chat
 // //log out
+=======
+}*/
+=======
+   
+}
+/*
+//another possibility for matching
+var user1 = db.members.find(???);
+var matchedusers = [];
+var otherUsers = db.members.find({
+$or: [{"int1": user1.int1}, {"int1": user1.int2}, {"int1": user1.int3},
+	{"int2": user1.int1}, {"int2": user1.int2}, {"int2": user1.int3},
+	{"int3": user1.int1}, {"int3": user1.int2}, {"int3": user1.int3}]
+});
+while(otherusers.hasNext()) {
+		matchedusers.push;
+} 
+
+/* Yet another possibility:
+var user2;
+var otherusers = db.Members.find();
+otherusers.forEach(function(user2) {
+		if (user2.int1 == user1.int1) {
+			matchlist.push(user2.username);
+		} else if (user2.int2 == user1.int1) {
+			matchlist.push(user2.username);
+		} else if (user2.int3 == user1.int1) {
+			matchlist.push(user2.username);
+		} else if (user2.int1 == user1.int2) {
+			matchlist.push(user2.username);
+		} else if (user2.int2 == user1.int2) {
+			matchlist.push(user2.username);
+		} else if (user2.int3 == user1.int2) {
+			matchlist.push(user2.username);
+		} else if (user2.int1 == user1.int3) {
+			matchlist.push(user2.username);
+		} else if (user2.int2 == user1.int3) {
+			matchlist.push(user2.username);
+		} else if (user2.int3 == user1.int3) {
+			matchlist.push(user2.username);
+		}
+});
+
+/*And another 
+var user1 = db.members.find(???);
+var matchedusers = [];
+var otherUsers = db.members.find({
+$or: [{"int1": user1.int1}, {"int1": user1.int2}, {"int1": user1.int3},
+	{"int2": user1.int1}, {"int2": user1.int2}, {"int2": user1.int3},
+	{"int3": user1.int1}, {"int3": user1.int2}, {"int3": user1.int3}]
+});
+otherusers.forEach(function(user2) {
+	matchedusers.push;
+	});
+
+
+*/
+
+
+>>>>>>> 04cec4789459d9a29a9d7e23670c0a9b7d6f149c
+
+//start the chat
+//log out
+>>>>>>> e723b5e451359ec23a008356159434edf536db35
