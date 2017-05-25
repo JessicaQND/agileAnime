@@ -58,27 +58,28 @@ module.exports.login = function(req,res){
 /*module.exports.matches = function(req,res){
 	var user1 = db.Members.find(gjihil);
 	var user2;
+	var matchlist = []
 	var otherusers = db.Members.find();
 	while(otherusers.hasNext()) {
    		user2 = otherusers.next();
 		if (user2.int1 == user1.int1) {
-			res.render(user2);
+			matchlist.push(user2.username);
 		} else if (user2.int2 == user1.int1) {
-			res.render(user2);
+			matchlist.push(user2.username);
 		} else if (user2.int3 == user1.int1) {
-			res.render(user2);
+			matchlist.push(user2.username);
 		} else if (user2.int1 == user1.int2) {
-			res.render(user2);
+			matchlist.push(user2.username);
 		} else if (user2.int2 == user1.int2) {
-			res.render(user2);
+			matchlist.push(user2.username);
 		} else if (user2.int3 == user1.int2) {
-			res.render(user2);
+			matchlist.push(user2.username);
 		} else if (user2.int1 == user1.int3) {
-			res.render(user2);
+			matchlist.push(user2.username);
 		} else if (user2.int2 == user1.int3) {
-			res.render(user2);
+			matchlist.push(user2.username);
 		} else if (user2.int3 == user1.int3) {
-			res.render(user2);
+			matchlist.push(user2.username);
 		}
    
 }*/
