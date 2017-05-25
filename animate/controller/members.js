@@ -82,7 +82,20 @@ module.exports.login = function(req,res){
 			matchlist.push(user2.username);
 		}
    
-}*/
+}
+
+//another possibility for matching
+var user1 = db.members.find(???);
+var matchedusers = [];
+var otherUsers = db.members.find({
+$or: [{"int1": user1.int1}, {"int1": user1.int2}, {"int1": user1.int3},
+	{"int2": user1.int1}, {"int2": user1.int2}, {"int2": user1.int3},
+	{"int3": user1.int1}, {"int3": user1.int2}, {"int3": user1.int3}]
+});
+while(otherusers.hasNext()) {
+		matchedusers.push;
+} 
+*/
 
 //start the chat
 //log out
