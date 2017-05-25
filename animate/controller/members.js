@@ -77,8 +77,26 @@ module.exports.newMember = function(req,res){
 		} else if (user2.int3 == user1.int3) {
 			matchlist.push(user2.username);
 		}
+<<<<<<< HEAD
 
 }*/
+=======
+   
+}
+
+//another possibility for matching
+var user1 = db.members.find(???);
+var matchedusers = [];
+var otherUsers = db.members.find({
+$or: [{"int1": user1.int1}, {"int1": user1.int2}, {"int1": user1.int3},
+	{"int2": user1.int1}, {"int2": user1.int2}, {"int2": user1.int3},
+	{"int3": user1.int1}, {"int3": user1.int2}, {"int3": user1.int3}]
+});
+while(otherusers.hasNext()) {
+		matchedusers.push;
+} 
+*/
+>>>>>>> 04cec4789459d9a29a9d7e23670c0a9b7d6f149c
 
 //start the chat
 //log out
