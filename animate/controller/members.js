@@ -83,7 +83,7 @@ module.exports.newMember = function(req,res){
 =======
    
 }
-
+/*
 //another possibility for matching
 var user1 = db.members.find(???);
 var matchedusers = [];
