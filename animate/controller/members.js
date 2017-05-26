@@ -3,22 +3,6 @@ var mongoose = require('mongoose');
 var member = mongoose.model('Member');
 var account = mongoose.model('Account');
 
-//return a list of all users
-module.exports.list = list;
-
-function list(req,res){
-  member.find({}).exec(
-    function(err, simpleSchema){
-      if(err){res.render('error', {
-        message:err.message,
-        error: err});
-      }
-	  else{console.log(simpleSchema);
-	    res.render('search',{'member':simpleSchema });}
-	  }
-  );
-};
-
 //returning a list on user profile
 module.exports.profilelist = profilelist;
 //find a way to take user through website
@@ -112,6 +96,7 @@ module.exports.newMember = function(req,res){
     res.render('updated');
   });
 };
+
 //we said we would match but did not say how well
 module.exports.Matching = Matching ;
 function Matching(req,res){
@@ -122,6 +107,6 @@ function Matching(req,res){
       error: err});
     }
     else{console.log(list);
-      res.render('index',{'matches':list});}
+      res.render('search',{'matches':list});}
     });
   };

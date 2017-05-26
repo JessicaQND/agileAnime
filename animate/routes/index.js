@@ -8,9 +8,9 @@ router.get('/', function(req, res) {
     res.render('index');
 });
 
-router.get('/search', function(req, res) {
-    res.render('search');
-});
+// router.get('/search', function(req, res) {
+//     res.render('search');
+// });
 
 router.get('/about', function(req, res) {
     res.render('about');
@@ -24,7 +24,10 @@ router.get('/strategies', function(req, res) {
     res.render('strategies');
 });
 
-router.get('/search', ctrlMemeber.list);
+router.get('/search', function(req, res) {
+    res.render('search');
+});
+router.post('/search', ctrlMemeber.Matching);
 
 //should only be for authenticated users
 router.get('/profile', ctrlMemeber.profilelist);
@@ -50,5 +53,9 @@ router.post('/login', passport.authenticate('local'), function(req, res) {
   res.render('index');
 });
 
+router.get('/logout', function(req, res) {
+      req.logout();
+          res.redirect('/index');
+});
 
 module.exports = router;

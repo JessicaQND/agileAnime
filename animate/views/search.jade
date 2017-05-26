@@ -22,43 +22,16 @@ block content
           br
           button.btn.btn-lg.btn-primary(type='submit', value="Search") Search
 
-
   .album.text-muted
     .container
       .row
-        .card
-          img(data-src='holder.js/100px280/thumb', alt='Card image cap')
-          p.card-text
-            | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-        .card
-          img(data-src='holder.js/100px280/thumb', alt='Card image cap')
-          p.card-text
-            | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-        .card
-          img(data-src='holder.js/100px280/thumb', alt='Card image cap')
-          p.card-text
-            | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-        .card
-          img(data-src='holder.js/100px280/thumb', alt='Card image cap')
-          p.card-text
-            | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-        .card
-          img(data-src='holder.js/100px280/thumb', alt='Card image cap')
-          p.card-text
-            | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-        .card
-          img(data-src='holder.js/100px280/thumb', alt='Card image cap')
-          p.card-text
-            | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-        .card
-          img(data-src='holder.js/100px280/thumb', alt='Card image cap')
-          p.card-text
-            | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-        .card
-          img(data-src='holder.js/100px280/thumb', alt='Card image cap')
-          p.card-text
-            | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-        .card
-          img(data-src='holder.js/100px280/thumb', alt='Card image cap')
-          p.card-text
-            | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+        if(matches)
+          each users in matches
+            .card
+              br
+              h2 Username:#{users.username}
+              p Name: #{users.firstname} #{users.lastname}
+              p Age: #{users.age}
+              br
+              br
+              br
