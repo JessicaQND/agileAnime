@@ -24,10 +24,18 @@ router.get('/strategies', function(req, res) {
     res.render('strategies');
 });
 
+router.get('/search', ctrlMemeber.list);
+
 //should only be for authenticated users
 router.get('/profile', ctrlMemeber.profilelist);
+
 //updating on update form submit
-router.post('/update', ctrlMemeber.UpdateDetails);
+router.post('/updateFirstname', ctrlMemeber.updateFirstname);
+router.post('/updateLastname', ctrlMemeber.updateLastname);
+router.post('/updateAge', ctrlMemeber.updateAge);
+router.post('/updateInt1', ctrlMemeber.updateInt1);
+router.post('/updateInt2', ctrlMemeber.updateInt2);
+router.post('/updateInt3', ctrlMemeber.updateInt3);
 
 
 router.get('/register', function(req, res) {
