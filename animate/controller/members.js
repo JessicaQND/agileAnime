@@ -21,9 +21,9 @@ function list(req,res){
 
 //returning a list on user profile
 module.exports.profilelist = profilelist;
-
+//find a way to take user through website
 function profilelist(req,res){
-  member.find( {username : "stroppyjohn" }).exec(
+  member.find( {username : req.user.username }).exec(
     function(err, simpleSchema){
       if(err){res.render('error', {
         message:err.message,
@@ -35,83 +35,84 @@ function profilelist(req,res){
   );
 };
 //uploading the data base onto mlab
-// module.exports.newMember = function(req,res){
-//   var newmember = new member({firstname: req.body.firstname,
-//     lastname: req.body.lastname,
-//     age: req.body.age,
-//     username: req.body.username,
-//     password : req.body.password,
-//     int1: req.body.int1,
-//     int2: req.body.int2,
-//     int3: req.body.int3
-//   });
-//   newmember.save(function(err, data){
-//     if(err) {
-//       console.log(err);
-//       res.status(500);
-//       res.render('error', {
-//         message:err.message,
-//         error: err
-//       });
-//     } else {
-//       account.register(
-//         new account({username: req.body.username}),
-//         req.body.password,
-//         function(err,acc) {
-//           if(err) {
-//             console.log(err);
-//           }
-//           res.render('/')
-//           //passport.authenticate('local', {successRedirect:'login'})
-//         }
-//       );
-//     }
-//   });
-// }
-//   module.exports.updateFirstname = function(req, res){
-//     member.update({username : "stroppyjohn"}, {
-//     firstname : req.body.firstname,
-//   }).exec((err,result)=>{
-//     res.render('updated');
-//   });
-// };
-//   module.exports.updateLastname = function(req, res){
-//     member.update({username : "stroppyjohn"}, {
-//     lastname : req.body.lastname,
-//   }).exec((err,result)=>{
-//     res.render('updated');
-//   });
-// };
-//   module.exports.updateAge = function(req, res){
-//     member.update({username : "stroppyjohn"}, {
-//     age : req.body.age,
-//   }).exec((err,result)=>{
-//     res.render('updated');
-//   });
-// };
-//   module.exports.updateInt1 = function(req, res){
-//     member.update({username : "stroppyjohn"}, {
-//     int1 : req.body.int1,
-//   }).exec((err,result)=>{
-//     res.render('updated');
-//   });
-// };
-//   module.exports.updateInt2 = function(req, res){
-//     member.update({username : "stroppyjohn"}, {
-//     int2 : req.body.int2,
-//   }).exec((err,result)=>{
-//     res.render('updated');
-//   });
-// };
-//
-//   module.exports.updateInt3 = function(req, res){
-//     member.update({username : "stroppyjohn"}, {
-//     int3 : req.body.int3,
-//   }).exec((err,result)=>{
-//     res.render('updated');
-//   });
-// };
-//
+module.exports.newMember = function(req,res){
+  var newmember = new member({firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    age: req.body.age,
+    username: req.body.username,
+    password : req.body.password,
+    int1: req.body.int1,
+    int2: req.body.int2,
+    int3: req.body.int3
+  });
+  newmember.save(function(err, data){
+    if(err) {
+      console.log(err);
+      res.status(500);
+      res.render('error', {
+        message:err.message,
+        error: err
+      });
+    } else {
+      account.register(
+        new account({username: req.body.username}),
+        req.body.password,
+        function(err,acc) {
+          if(err) {
+            console.log(err);
+          }
+          res.render('login')
+          //passport.authenticate('local', {successRedirect:'login'})
+        }
+      );
+    }
+  });
+}
+//find a way to soft code user
+  module.exports.updateFirstname = function(req, res){
+    member.update({username : req.user.username }, {
+    firstname : req.body.firstname,
+  }).exec((err,result)=>{
+    res.render('updated');
+  });
+};
+  module.exports.updateLastname = function(req, res){
+    member.update({username : req.user.username }, {
+    lastname : req.body.lastname,
+  }).exec((err,result)=>{
+    res.render('updated');
+  });
+};
+  module.exports.updateAge = function(req, res){
+    member.update({username : req.user.username }, {
+    age : req.body.age,
+  }).exec((err,result)=>{
+    res.render('updated');
+  });
+};
+  module.exports.updateInt1 = function(req, res){
+    member.update({username : req.user.username }, {
+    int1 : req.body.int1,
+  }).exec((err,result)=>{
+    res.render('updated');
+  });
+};
+  module.exports.updateInt2 = function(req, res){
+    member.update({username : req.user.username }, {
+    int2 : req.body.int2,
+  }).exec((err,result)=>{
+    res.render('updated');
+  });
+};
+
+  module.exports.updateInt3 = function(req, res){
+    member.update({username : req.user.username }, {
+    int3 : req.body.int3,
+  }).exec((err,result)=>{
+    res.render('updated');
+  });
+};
+
 // module.exports.MatchMake = function(inT1, inT2, inT3, callback) {
 // 	mongoose.once('open', function() {
 // 		var schema = mongoose.Member()
