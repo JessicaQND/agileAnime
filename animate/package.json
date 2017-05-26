@@ -1,7 +1,10 @@
 {
   "name": "animate",
   "version": "0.0.0",
-  "main": "app.js",
+  "engines": {
+    "node": "7.9.0"
+  },
+  "main" : "app.js",
   "private": true,
   "scripts": {
     "start": "node app"
