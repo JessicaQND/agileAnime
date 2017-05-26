@@ -1,12 +1,31 @@
 extends layout
 block content
-  br
-  br
-  p
-    |bootstrap
-    |  nav bar - https://v4-alpha.getbootstrap.com/examples/navbars/
-    |  album - https://v4-alpha.getbootstrap.com/examples/album/
-    |  carousel - https://v4-alpha.getbootstrap.com/examples/carousel/
-    |  signin - https://v4-alpha.getbootstrap.com/examples/signin/
-    |tutorials
-    |stackoverflow
+  .container
+    br
+    p.lead bootstrap
+    p
+      |nav bar - Navbar examples, Bootstrap, accessed on 12 May 2017, <https://v4-alpha.getbootstrap.com/examples/navbars/>
+    p
+      |album - Album example, Bootstrap, accessed on 12 May 2017, <https://v4-alpha.getbootstrap.com/examples/album/>
+    p
+      |carousel - Carousel example, Bootstrap, accessed on 12 May 2017, <https://v4-alpha.getbootstrap.com/examples/carousel/>
+    p
+      |signin - Sign In example, Bootstrap, accessed on 12 May 2017, <https://v4-alpha.getbootstrap.com/examples/signin/>
+    br
+    p.lead tutorials/examples
+    p
+      |Dr Tim French's lecture material, lab material and example app
+    br
+    p.lead stackoverflow
+    p
+      |Various tips from many stackoverflow pages
+    br
+    p.lead pictures
+    p
+      |Index.jade - http://68.media.tumblr.com/531ab774a5bf34d887dee52bdf520fce/tumblr_inline_n6l3p3MXsU1s13368.jpg
+      |- http://www.nextadvisor.com/blog/wp-content/uploads/2011/05/online-dating-pickup-lines.jpg
+      |- https://fthmb.tqn.com/JqrBswIAKAhso2KkrnA5IkYfts8=/4910x3472/filters:fill(auto,1)/about/question_mark-166836001-56af9f3c3df78cf772c6c639.jpg
+    p
+      | 404.jade - http://i.imgur.com/MOWEwaV.jpg', alt='Error 404
+
+    a.btn.btn-lg.btn-primary(href='/about', role='button') Go back

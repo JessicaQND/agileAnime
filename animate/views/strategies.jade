@@ -2,20 +2,125 @@ extends layout
 block content
   br
   br
-  p
-    |INFO COMING SOON
-    hello guys , i am here to tell u how the magic algoroithm works, we take it
-    your details and top 3 animes interest and runs it a blossom matching algoroithm
-    in our intense userbase to generate 10 memebers that have the most likely chance
-    of "friendship",
-    from the sound of your name , to your age and the email address given ,
-    our havard proven algoroithm is predicted to match u a person of your choice
-    .
+  .container.marketing
+    .row.featurette
+      .col
+        h2.featurette-heading Design Choices
+        br
+        p.lead
+          | Bootstrap
+        p
+          | Bootstrap was basically used in all views within the application.
+          | Learning from the previous experience of working on the first part
+          | of the project we learnt that hardcoding CSS by hand was very
+          | tedious and time consuming. Therefore, Bootstrap was the obvious
+          | choice for this time round. We used the free example components and
+          | made edits to them to fit our website.
+        br
+        p.lead MongoDB and Express
+        p
+          | The decision came from Dr Tim French as a prequisite for the unit,
+          | we had no say in it. If given a choice I would have gone with mySQL
+          | as I have previous experience with it but mongoDB was simple to pick
+          | up and had ample tutorials online. Express was fairly easy to understand,
+          | perhaps the most troublesome part was rendering output into jade but
+          | a good learning experience nonetheless.- Glenn Ang
+        br
+        p.lead
+          | Text input
+        p
+          | We decided to go with text input format for the search forms rather
+          | than the original checkbox fields because Glenn couldn't register
+          | the input from them properly in the database. In retrospect, they
+          | would have been a far better choice in terms of user error. Also
+          | we originally wanted to match by anime genre as there is only a handful
+          | compared to the number of actual anime titles out there. However,
+          | as checkboxes didn't work out for us, we had to use all text input
+          | regrettably.
 
-    Basically we stole tinders and faces book recommand a friend function and renamed
-    it our own and trade mark that shit !!!
+        br
+        br
+        h2.featurette-heading Testing and Validation
+        p
+          |The testing and validation strategy we employed for our website
+          | focused upon testing our user’s capacity to update their details;
+          | namely their first and last names, age, and interests. We used the
+          | Mocha test framework in order to create tests for these functionalities.
+          | As said functionalities interacted with the database, it was necessary
+          | to write the test group so that it would open and close a connection
+          | to the database around the execution of the tests.
+        p
+          |Before the individual tests were run, a dummy user needed to be
+          | created so that we could use our update function to change their
+          | details with dummy data and compare the result to the result we
+          | expected. As our update user details functions drew their variables
+          | from input forms, in order to enter these dummy details into our
+          | functions to test them, it was necessary to fill these forms out
+          | with the dummy variables we wanted to use. Thus as well as creating
+          | a new user to test, we also had the wrapping function fill out the
+          | input forms for editing user details , that would be submitted once
+          | the functions were executed during the tests. When the tests were
+          | run, they compared the value in relevant field for the dummy user
+          | with the value we expected to see. At the completion of the tests,
+          | the dummy user was deleted and the fields were cleared of dummy variables.
+          | - Claire Abbott
+        br
+        br
 
-    enjoy my little troppers and happy matching
+        h2.featurette-heading Problems
+        p.lead General Problems
+        p
+          | None of us are very experiences coders and this was a rather hard
+          | project to tackle. It was very difficult to find momentum at first
+          | as everything was so confusing. Granted, we should have started earlier
+          | or paid more attention in class. That being said, it was a real
+          | struggle for some of us but we did what we could and the functionality
+          | is all kind of there (just could've been done in a more efficient
+          | and cleaner manner.)
+        p.lead Front-end Problems
+        p
+          | Jade was very confusing at first and also a bit of a pain since it
+          | would cause all sorts of styling errors compared to regular html.
+          | After you get the hang of it, it actually becomes a lot faster to
+          | write in. Another problem faced was slight styling errors all over
+          | the pages (e.g. boxes not being centered or not in-line) which is
+          | hard to fix if you used bootstrap and not entirely sure where the
+          | mess up is occuring. Another big problem was the displaying of
+          | authenticated information in the jade view, usually caused by a type
+          | or syntax error. There were also a lot of views to create so it did
+          | wear me out in the end since you always need to be careful about
+          | 404 errors and not messing with the flow. All in all, I did learn a
+          | great deal from this project. - Jessica Dang
 
-    - glenn gordon a
-    'the really back-end back end developer!'
+        p.lead Backend Problems
+        p
+          | Getting the environment initially set up was a rather tedious task
+          | even though it sounded quite simple. There were a lot of dependencies
+          | and npm init didn't come with as many pre-installed folders or files
+          | to help you get started.
+          | Syntax was a big challenge for me as I am dyslexic and using ubuntu to
+          | run querys for the first time. It was a rewarding experience though
+          | and I am glad I put in the effort. Just wished I did this unit before
+          | enrolling in the year long project design unit (maybe a consideration
+          | for the next generation of MITs). Mongodb also did not allow users to
+          | save query as a variable and callback function was annoying can cause
+          | errors if a function is a call back in a call back. Also causes syntax
+          | error with }) leading hours spending in correcting a stupid mistake
+          | that even eslint could not pick up sometimes. - Glenn Ang
+
+        br
+        br
+
+        h2.featurette-heading Future Goals
+        p
+          | Future goals would include properly getting the navigation buttons
+          | to correctly show whenever the user was authenticated or not. Also
+          |to change the matching algorithm to that involving all types of
+          | inputs; from text to checkboxes and radio buttons (and actually
+          |do proper matching). Better test intergration, espcially with Travis
+          |CI is another problem to be fixed. There are many other functionalites
+          | that would be good to add to the website, like chate options or
+          | clicking on the specific person to see more of their details or
+          | a graphical representation of the match quality.
+        br
+        a.btn.btn-lg.btn-primary(href='/about', role='button') Go back
