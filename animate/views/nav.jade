@@ -13,14 +13,20 @@
           a.nav-link(href='/about') About
         li.nav-item
           a.nav-link(href='/search') Search
-        if(!user)
+        if(user)
           li.nav-item
             a.nav-link(href='/profile') Profile
+            //profile link does not reappear after login in again.
+            //please type direct URL or press login again, it appears on that page for some reason
       ul.navbar-nav(style='float:right')
         if(!user)
           li.nav-item
               a.btn.btn-outline-success.my-2.my-sm-0(href='/login', role='button') Login
           li.nav-item(id='register-button')
             a.btn.btn-outline-primary.my-2.my-sm-0(href='/register', role='button') Register
-          li.nav-item(id='logout-button')
-            a.btn.btn-outline-primary.my-2.my-sm-0(href='/logout', role='button') Logout
+          if(user)
+            li.nav-item(id='logout-button')
+              a.btn.btn-outline-primary.my-2.my-sm-0(href='/logout', role='button') Logout
+              //Logout does not appear after login in(?)
+              //Functionality exists but cannot be accessed
+              //Remove "if(user)" to make it appear and test the functionality

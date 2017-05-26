@@ -55,18 +55,18 @@ passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 app.use('/', index);
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+
+//Make all errors direct to a standard error message page cause it looks nicer for users
+//Developers should switch back to normal error handling
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
-  next(err);
+  res.render('404');
+  // next(err);
+  // If you need to do some development switch back to next(err), custom page
+  // is nicer for users to look at
 });
 
 // error handler
@@ -77,7 +77,8 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('404');
+  //res.render('error');
 });
 
 module.exports = app;
